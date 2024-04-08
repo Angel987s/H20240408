@@ -3,10 +3,10 @@
 
 namespace H20240408.LogicaDeNegocio
 {
-    public class PersonaABL
+    public class PersonaHBL
     {
         readonly PersonaHDAL _personaHDAL;
-        public PersonaABL(PersonaHDAL personaHDAL)
+        public PersonaHBL(PersonaHDAL personaHDAL)
         {
             _personaHDAL = personaHDAL;
         }

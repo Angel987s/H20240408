@@ -1,0 +1,54 @@
+﻿@model PersonaH
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div class="container mt-4 mb-4">
+    <div class="card bg-light shadow">
+        <div class="card-header bg-warning text-white">
+            <h5 class="card-title">Confirmar Eliminación</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>¿Estás seguro de que deseas eliminar a esta persona?</h3>
+                    <p class="text-muted">Esta acción es irreversible.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Detalles de la Persona</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-4">Nombre</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreH)</dd>
+                        <dt class="col-sm-4">Apellido</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ApellidoH)</dd>
+                        <dt class="col-sm-4">Fecha de Nacimiento</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaNacimientoH)</dd>
+                        <dt class="col-sm-4">Sueldo</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.SueldoH)</dd>
+                        <dt class="col-sm-4">Estatus</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.EstatusH == 1)
+                            {
+                                <span class="badge bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Inactivo</span>
+                            }
+                        </dd>
+                        <dt class="col-sm-4">Comentario</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ComentarioH)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+            <form asp-action="Delete">
+                <input type="submit" value="Eliminar" class="btn btn-danger me-2" />
+            </form>
+            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
